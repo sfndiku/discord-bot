@@ -11,7 +11,7 @@ const client = new Client({
 });
 
 client.on ('ready',(c) => {
-    console.log(`✅ ${c.user.tag} is ready`)
+    console.log(`✅ ${c.user.tag} is ready to go`)
 });
 
 client.on('messageCreate', (message)=>{
