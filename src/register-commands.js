@@ -5,40 +5,8 @@ const { REST , Routes , ApplicationCommandOptionType } = require('discord.js');
 
 const commands = [
     {
-        name: 'hey',
-        description: 'replies with hey!',
-    },
-    {
-        name: 'ping',
-        description: 'replies with pong!',
-    },
-    {
-        name: 'add',
-        description: 'add 2 numbers',
-        options: [
-            {
-                name:'first-num',
-                description:'first num',
-                type:ApplicationCommandOptionType.Number,
-                choices: [
-                    {
-                        name:'one',
-                        value: 1,
-                    },
-                    {
-                        name:'two',
-                        value: 2,
-                    },
-                ],
-                required: true,
-            },
-            {
-                name:'sec-num',
-                description:'second num',
-                type:ApplicationCommandOptionType.Number,
-                required:true,
-            },
-        ]
+        name: 'embed',
+        description: 'sends and embed!'
     },
 ];
 

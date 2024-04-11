@@ -1,5 +1,5 @@
 require('dotenv').config();
-const { Client, IntentsBitField} = require('discord.js');
+const { Client, IntentsBitField , EmbedBuilder } = require('discord.js');
 
 const client = new Client({
     intents:[
@@ -19,7 +19,7 @@ client.on('messageCreate', (message)=>{
         return;
     }
     
-    console.log(message.createdAt,"=>",message.author.username,": ",message.content," (",message.channel.name,")");
+    console.log(message.createdAt,"(",message.guildId,")","=>",message.author.username,": ",message.content," (",message.channel.name,")");
 });
 
 //INTERACTIONS PALACE----------------------------------------------------------------------------------
@@ -28,20 +28,26 @@ client.on('interactionCreate',(interaction)=> {
     
     if(!interaction.isChatInputCommand())return;
 
-    if(interaction.commandName=='hey'){
-        interaction.reply('Well hello there!');
-    }
-    if(interaction.commandName=='ping'){
-        interaction.reply('PONG!');
-    }
+    if(!interaction.c){
+        const embed = new EmbedBuilder()
+        .setTitle('Embed title')
+        .setDescription('This is an embed duh!')
+        .setColor("Random")
+        .addFields(
+            {
+                name:'Fieldtitle',
+                value:'Some random value',
+                inline:true,
+            },
+            {
+                name:'Fieldtitle',
+                value:'Some random value',
+                inline:true,
+            }
+    )
 
-    if(interaction.commandName=='add'){
-        const num1 = interaction.options.get('first-num').value;
-        const num2 = interaction.options.get('sec-num').value;
-        
-        interaction.reply(`Sumis ${num1+num2}`);
-    }
-
+    interaction.reply({embeds: [embed]});
+    };
 
 });
 
