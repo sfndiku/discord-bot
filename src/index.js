@@ -28,7 +28,7 @@ client.on('interactionCreate',(interaction)=> {
     
     if(!interaction.isChatInputCommand())return;
 
-    if(!interaction.c){
+    if(interaction.commandName==='embed'){
         const embed = new EmbedBuilder()
         .setTitle('Embed title')
         .setDescription('This is an embed duh!')
@@ -48,6 +48,10 @@ client.on('interactionCreate',(interaction)=> {
 
     interaction.reply({embeds: [embed]});
     };
+
+    if(interaction.commandName==='ping'){
+        interaction.reply(`Ping?  Pong to you ${interaction.user.globalName}`);
+    }
 
 });
 

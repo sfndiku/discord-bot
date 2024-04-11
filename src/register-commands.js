@@ -8,6 +8,10 @@ const commands = [
         name: 'embed',
         description: 'sends and embed!'
     },
+    {
+        name: 'ping',
+        description:'send Pong!'
+    }
 ];
 
 
