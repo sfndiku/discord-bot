@@ -31,7 +31,7 @@ client.on('interactionCreate',(interaction)=> {
     if(interaction.commandName==='embed'){
         const embed = new EmbedBuilder()
         .setTitle('Embed title')
-        .setDescription('This is an embed duh!')
+        .setDescription('This is an embed duh! ')
         .setColor("Random")
         .addFields(
             {
